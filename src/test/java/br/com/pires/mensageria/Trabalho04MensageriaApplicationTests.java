@@ -1,4 +1,4 @@
-package br.com.pires.mensageria.mensageria;
+package br.com.pires.mensageria;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package br.com.pires.mensageria.mensageria.controller;
+package br.com.pires.mensageria.controller;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,17 +9,17 @@ import org.springframework.context.ApplicationContext;
 
 import java.io.IOException;
 
-public class CadastroContatos extends Application {
+public class Mensageria extends Application {
 
     @Setter
     private static ApplicationContext springContext;
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(CadastroContatos.class.getResource("/cadastrocontatos/cadastro-de-contatos.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Mensageria.class.getResource("/view/drones.fxml"));
         fxmlLoader.setControllerFactory(springContext::getBean);
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Cadastro de Contatos");
+        stage.setTitle("Trabalho Final");
         stage.setScene(scene);
         stage.show();
     }

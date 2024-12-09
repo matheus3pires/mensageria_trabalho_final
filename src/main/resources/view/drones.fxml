@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="782.0" prefWidth="937.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.pires.mensageria.controller.DronesController">
+   <children>
+      <Label alignment="CENTER" layoutX="126.0" layoutY="14.0" prefHeight="36.0" prefWidth="204.0" text="Cadastro de Drone" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <TextField fx:id="txtModeloDrone" layoutX="40.0" layoutY="72.0" prefHeight="24.0" prefWidth="376.0" promptText="Modelo do Drone">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <TextField fx:id="txtFabricanteDrone" layoutX="40.0" layoutY="111.0" prefHeight="24.0" prefWidth="376.0" promptText="Fabricante do Drone">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <ComboBox fx:id="comboStatusDrone" layoutX="40.0" layoutY="151.0" prefHeight="25.0" prefWidth="376.0" promptText="Status do Drone">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Ativo" />
+            </FXCollections>
+         </items>
+      </ComboBox>
+      <Button fx:id="btnCadastrarDrone" layoutX="162.0" layoutY="197.0" mnemonicParsing="false" onAction="#cadastrarDrone" prefHeight="36.0" prefWidth="132.0" text="Cadastrar Drone" />
+      <Label alignment="CENTER" layoutX="596.0" layoutY="14.0" prefHeight="36.0" prefWidth="220.0" text="Agendamento de Manutenção" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="comboDrones" layoutX="517.0" layoutY="72.0" prefHeight="25.0" prefWidth="376.0" promptText="Selecione um Drone" />
+      <TextField fx:id="txtDescricaoManutencao" layoutX="517.0" layoutY="111.0" prefHeight="25.0" prefWidth="376.0" promptText="Descrição da Manutenção" />
+      <DatePicker fx:id="dataAgendada" layoutX="518.0" layoutY="151.0" prefHeight="25.0" prefWidth="173.0" promptText="Data da Manutenção" />
+      <ComboBox fx:id="comboStatusManutencao" layoutX="720.0" layoutY="151.0" prefHeight="25.0" prefWidth="173.0" promptText="Status da Manutenção">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Pendente" />
+            </FXCollections>
+         </items>
+      </ComboBox>
+      <Button fx:id="btnAgendarManutencao" layoutX="640.0" layoutY="197.0" onAction="#agendarManutencao" prefHeight="36.0" prefWidth="132.0" text="Agendar Manutenção" />
+      <TableView fx:id="tableHistorico" focusTraversable="false" layoutX="40.0" layoutY="241.0" prefHeight="475.0" prefWidth="864.0">
+        <columns>
+          <TableColumn fx:id="columnId" prefWidth="59.0" text="ID" />
+          <TableColumn fx:id="columnModelo" prefWidth="135.0" text="Modelo" />
+            <TableColumn fx:id="columnFabricante" minWidth="0.0" prefWidth="138.0" text="Fabricante" />
+            <TableColumn fx:id="columnDescricao" prefWidth="128.0" text="Descrição" />
+            <TableColumn fx:id="columnDataAgendada" prefWidth="128.0" text="Data agendada" />
+            <TableColumn fx:id="columnDataRealizada" prefWidth="128.0" text="Data realizada" />
+            <TableColumn fx:id="columnStatus" prefWidth="147.0" text="Status Manutenção" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnConcluirManutencao" layoutX="273.0" layoutY="725.0" onAction="#concluirManutencao" prefHeight="36.0" prefWidth="132.0" text="Concluir Manutenção" />
+      <Button fx:id="btnAtualizarDados" layoutX="539.0" layoutY="725.0" mnemonicParsing="false" onAction="#atualizarDados" prefHeight="36.0" prefWidth="132.0" text="Atualizar Dados" />
+      <Pane fx:id="paneMensagem" layoutX="193.0" layoutY="116.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="558.0" style="-fx-background-color: #739ad9;" visible="false">
+         <children>
+            <Label fx:id="lblMensagem" alignment="CENTER" layoutX="13.0" layoutY="6.0" prefHeight="59.0" prefWidth="533.0" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</Pane>

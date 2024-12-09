@@ -11,7 +11,7 @@
 	<groupId>br.com.pires.mensageria</groupId>
 	<artifactId>mensageria</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mensageria_trabalho04</name>
+	<name>mensageria_trabalho_final</name>
 	<description>Integração de Banco de Dados com JavaFX</description>
 	<url/>
 	<licenses>
@@ -55,7 +55,28 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+			<version>2.15.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.amqp</groupId>
+			<artifactId>spring-rabbit-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 
@@ -114,7 +135,7 @@
 					<execution>
 						<id>default-cli</id>
 						<configuration>
-							<mainClass>br.com.pires.mensageria.mensageria.Trabalho04MensageriaApplication</mainClass>
+							<mainClass>br.com.pires.mensageria.MensageriaTrabalhoFinalApplication</mainClass>
 							<launcher>app</launcher>
 							<jlinkZipName>app</jlinkZipName>
 							<jlinkImageName>app</jlinkImageName>
